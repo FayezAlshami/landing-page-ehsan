@@ -2,11 +2,14 @@
 
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import { useLenisScrollTo } from "@/components/SmoothScroll";
 
 export default function FloatingContact() {
+  const scrollToSelector = useLenisScrollTo();
+
   const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+    scrollToSelector("#contact");
   };
 
   return (
